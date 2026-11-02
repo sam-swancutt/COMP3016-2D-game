@@ -1,7 +1,9 @@
 #pragma once
 #include <SDL3/SDL.h>
 #include <memory>
+#include <vector>
 #include "Player.h"
+#include "Enemy.h"
 
 class Game {
 public:
@@ -22,4 +24,5 @@ private:
     bool running = false;
 
     std::unique_ptr<Player> player;
+    std::vector<std::unique_ptr<Enemy>> enemies;
 };
