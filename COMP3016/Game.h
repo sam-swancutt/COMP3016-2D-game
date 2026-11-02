@@ -4,6 +4,8 @@
 #include <vector>
 #include "Player.h"
 #include "Enemy.h"
+#include "Boss.h"
+#include "LevelManager.h"
 
 class Game {
 public:
@@ -18,6 +20,7 @@ private:
     void update(float dt);
     void render();
     void shutdown();
+    void startRun();
 
     SDL_Window* window = nullptr;
     SDL_Renderer* renderer = nullptr;
@@ -25,4 +28,8 @@ private:
 
     std::unique_ptr<Player> player;
     std::vector<std::unique_ptr<Enemy>> enemies;
+    std::unique_ptr<Boss> boss;
+    bool bossSpawned = false;
+    bool won = false;
+    LevelManager levelManager{ 1280, 720, 3 };
 };

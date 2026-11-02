@@ -3,8 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Projectile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|solutionrelative:COMP3016\\Projectile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\COMP3016.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|solutionrelative:COMP3016\\COMP3016.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|solutionrelative:COMP3016\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|solutionrelative:COMP3016\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Boss.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|solutionrelative:COMP3016\\Boss.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Boss.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|solutionrelative:COMP3016\\Boss.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Projectile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|solutionrelative:COMP3016\\Projectile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\LevelManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|solutionrelative:COMP3016\\LevelManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\LevelManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|solutionrelative:COMP3016\\LevelManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|solutionrelative:COMP3016\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|solutionrelative:COMP3016\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Cooldown.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|solutionrelative:COMP3016\\Cooldown.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -15,32 +59,12 @@
       "RelativeMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|solutionrelative:COMP3016\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|solutionrelative:COMP3016\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Health.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|solutionrelative:COMP3016\\Health.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Cooldown.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|solutionrelative:COMP3016\\Cooldown.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|solutionrelative:COMP3016\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|solutionrelative:COMP3016\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|solutionrelative:COMP3016\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\COMP3016.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|solutionrelative:COMP3016\\COMP3016.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{772A2846-2F67-4440-9C2E-848CD1A6E2A8}|COMP3016\\COMP3016.vcxproj|C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -54,11 +78,102 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "Boss.cpp",
+              "DocumentMoniker": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Boss.cpp",
+              "RelativeDocumentMoniker": "COMP3016\\Boss.cpp",
+              "ToolTip": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Boss.cpp",
+              "RelativeToolTip": "COMP3016\\Boss.cpp",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAiwIYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-11-02T13:42:25.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Boss.h",
+              "DocumentMoniker": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Boss.h",
+              "RelativeDocumentMoniker": "COMP3016\\Boss.h",
+              "ToolTip": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Boss.h",
+              "RelativeToolTip": "COMP3016\\Boss.h",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAiwCoAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-11-02T13:42:09.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Player.cpp",
+              "RelativeDocumentMoniker": "COMP3016\\Player.cpp",
+              "ToolTip": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Player.cpp",
+              "RelativeToolTip": "COMP3016\\Player.cpp",
+              "ViewState": "AgIAADYAAAAAAAAAAAAiwGAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-11-02T11:52:28.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Projectile.cpp",
+              "DocumentMoniker": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Projectile.cpp",
+              "RelativeDocumentMoniker": "COMP3016\\Projectile.cpp",
+              "ToolTip": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Projectile.cpp",
+              "RelativeToolTip": "COMP3016\\Projectile.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-11-02T13:41:32.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Projectile.h",
+              "DocumentMoniker": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Projectile.h",
+              "RelativeDocumentMoniker": "COMP3016\\Projectile.h",
+              "ToolTip": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Projectile.h",
+              "RelativeToolTip": "COMP3016\\Projectile.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-11-02T13:41:07.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LevelManager.cpp",
+              "DocumentMoniker": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\LevelManager.cpp",
+              "RelativeDocumentMoniker": "COMP3016\\LevelManager.cpp",
+              "ToolTip": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\LevelManager.cpp",
+              "RelativeToolTip": "COMP3016\\LevelManager.cpp",
+              "ViewState": "AgIAABQAAAAAAAAAAAAiwDsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-11-02T13:28:49.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LevelManager.h",
+              "DocumentMoniker": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\LevelManager.h",
+              "RelativeDocumentMoniker": "COMP3016\\LevelManager.h",
+              "ToolTip": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\LevelManager.h",
+              "RelativeToolTip": "COMP3016\\LevelManager.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-11-02T13:28:13.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Enemy.cpp",
               "DocumentMoniker": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Enemy.cpp",
               "RelativeDocumentMoniker": "COMP3016\\Enemy.cpp",
@@ -66,12 +181,11 @@
               "RelativeToolTip": "COMP3016\\Enemy.cpp",
               "ViewState": "AgIAABAAAAAAAAAAAAAiwDgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-11-02T12:50:02.677Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-02T12:50:02.677Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 13,
               "Title": "Enemy.h",
               "DocumentMoniker": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Enemy.h",
               "RelativeDocumentMoniker": "COMP3016\\Enemy.h",
@@ -79,12 +193,11 @@
               "RelativeToolTip": "COMP3016\\Enemy.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-11-02T12:49:41.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-02T12:49:41.79Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 14,
               "Title": "Health.h",
               "DocumentMoniker": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Health.h",
               "RelativeDocumentMoniker": "COMP3016\\Health.h",
@@ -92,12 +205,11 @@
               "RelativeToolTip": "COMP3016\\Health.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-11-02T12:49:15.94Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-02T12:49:15.94Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "Cooldown.h",
               "DocumentMoniker": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Cooldown.h",
               "RelativeDocumentMoniker": "COMP3016\\Cooldown.h",
@@ -110,33 +222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Player.cpp",
-              "DocumentMoniker": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Player.cpp",
-              "RelativeDocumentMoniker": "COMP3016\\Player.cpp",
-              "ToolTip": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Player.cpp",
-              "RelativeToolTip": "COMP3016\\Player.cpp",
-              "ViewState": "AgIAABkAAAAAAAAAAAAiwFoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-11-02T11:52:28.649Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Player.h",
-              "DocumentMoniker": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Player.h",
-              "RelativeDocumentMoniker": "COMP3016\\Player.h",
-              "ToolTip": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Player.h",
-              "RelativeToolTip": "COMP3016\\Player.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-11-02T11:51:53.155Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "Entity.cpp",
               "DocumentMoniker": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Entity.cpp",
               "RelativeDocumentMoniker": "COMP3016\\Entity.cpp",
@@ -148,7 +234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 15,
               "Title": "Entity.h",
               "DocumentMoniker": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Entity.h",
               "RelativeDocumentMoniker": "COMP3016\\Entity.h",
@@ -156,8 +242,7 @@
               "RelativeToolTip": "COMP3016\\Entity.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-11-02T11:50:54.03Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-02T11:50:54.03Z"
             },
             {
               "$type": "Document",
@@ -167,27 +252,40 @@
               "RelativeDocumentMoniker": "COMP3016\\Game.h",
               "ToolTip": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Game.h",
               "RelativeToolTip": "COMP3016\\Game.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-11-02T11:46:14.605Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Game.cpp",
               "DocumentMoniker": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Game.cpp",
               "RelativeDocumentMoniker": "COMP3016\\Game.cpp",
               "ToolTip": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Game.cpp",
               "RelativeToolTip": "COMP3016\\Game.cpp",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAiwHMAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAALkAAAAAAAAAAAAswOEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-11-02T11:45:30.096Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
+              "Title": "Player.h",
+              "DocumentMoniker": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Player.h",
+              "RelativeDocumentMoniker": "COMP3016\\Player.h",
+              "ToolTip": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\Player.h",
+              "RelativeToolTip": "COMP3016\\Player.h",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAiwCsAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-11-02T11:51:53.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "COMP3016.cpp",
               "DocumentMoniker": "C:\\Users\\samsw\\OneDrive\\Desktop\\COMP3016\\COMP3016\\COMP3016.cpp",
               "RelativeDocumentMoniker": "COMP3016\\COMP3016.cpp",

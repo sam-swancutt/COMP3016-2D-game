@@ -1,5 +1,6 @@
-﻿  COMP3016.cpp
-  Enemy.cpp
+﻿  Boss.cpp
+  COMP3016.cpp
   Game.cpp
+  Projectile.cpp
   Generating Code...
   COMP3016.vcxproj -> C:\Users\samsw\OneDrive\Desktop\COMP3016\x64\Debug\COMP3016.exe
