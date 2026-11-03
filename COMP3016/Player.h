@@ -2,6 +2,7 @@
 #include "Entity.h"
 #include "Cooldown.h"
 #include "Health.h"
+#include "Inventory.h"
 
 class Player : public Entity {
 public:
@@ -18,11 +19,21 @@ public:
     bool isAttacking() const { return attacking; }
     const SDL_FRect& getAttackRect() const { return attackRect; }
 
+    // Loot
+    bool pickUp(const Item& item);        // false if the inventory is full
+    void useItem(int slot);               // drink a potion or equip a weapon
+    int getDamage() const;                // 1, plus the equipped weapon's bonus
+    const Inventory& getInventory() const { return inventory; }
+    const Item& getWeapon() const { return weapon; }   // empty item = nothing equipped
+
 private:
     float speed = 250.0f;
 
     Health health{ 5 };
-    Cooldown hurtCooldown{ 1.0f };    // brief invulnerability after being hit
+    Cooldown hurtCooldown{ 1.0f };
+
+    Inventory inventory;
+    Item weapon;                          // currently equipped weapon
 
     // Dodge roll
     Cooldown dodgeCooldown{ 1.0f };

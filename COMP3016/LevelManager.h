@@ -10,9 +10,11 @@ public:
     void reset();
     void update(float dt, std::vector<std::unique_ptr<Enemy>>& enemies, const Entity* player);
 
+    void setExtraEnemies(int n) { extraEnemies = n; }
+
     int getLevel() const { return level; }
     int getTotalLevels() const { return totalLevels; }
-    bool isFinished() const { return finished; }   // all rooms cleared
+    bool isFinished() const { return finished; }
 
 private:
     void spawnLevel(std::vector<std::unique_ptr<Enemy>>& enemies, const Entity* player);
@@ -20,7 +22,8 @@ private:
     int screenW;
     int screenH;
     int totalLevels;
-    int level = 0;            // 0 = nothing spawned yet
+    int level = 0;
+    int extraEnemies = 0;
     bool finished = false;
-    float delayTimer = 1.0f;  // pause before the next wave
+    float delayTimer = 1.0f;
 };

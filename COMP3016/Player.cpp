@@ -95,3 +95,27 @@ void Player::render(SDL_Renderer* renderer) {
         SDL_RenderFillRect(renderer, &attackRect);
     }
 }
+
+bool Player::pickUp(const Item& item) {
+    return inventory.add(item);
+}
+
+void Player::useItem(int slot) {
+    if (slot < 0 || slot >= Inventory::Size) return;
+    Item chosen = inventory.get(slot);    // copy before touching the slot
+    if (chosen.isEmpty()) return;
+
+    if (chosen.getType() == ItemType::Potion) {
+        if (health.isFull()) return;      // don't waste it at full health
+        health.heal(chosen.getPower());
+        inventory.take(slot);
+    }
+    else {
+        inventory.set(slot, weapon);      // old weapon (or empty) goes back in the slot
+        weapon = chosen;
+    }
+}
+
+int Player::getDamage() const {
+    return 1 + (weapon.isEmpty() ? 0 : weapon.getPower());
+}
