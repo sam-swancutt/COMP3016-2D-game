@@ -1,4 +1,5 @@
 #include "Boss.h"
+#include "Assets.h"
 #include <cmath>
 #include <algorithm>
 
@@ -109,27 +110,51 @@ void Boss::render(SDL_Renderer* renderer) {
         p->render(renderer);
     }
 
-    if (!hurtCooldown.ready()) {
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);        // white: just hit
-    }
-    else {
+    bool hit = !hurtCooldown.ready();
+    bool flashOn = ((int)(stateTimer * 10.0f) % 2 == 0);   // used for the telegraph flash
+
+    if (Assets::boss) {
+        // Tint the sprite by state so the attack pattern is still readable
+        Uint8 r = 255, g = 255, b = 255;
         switch (state) {
-        case State::Chase:
-            SDL_SetRenderDrawColor(renderer, 140, 60, 180, 255);     // purple
-            break;
-        case State::Telegraph:
-            if ((int)(stateTimer * 10.0f) % 2 == 0)
-                SDL_SetRenderDrawColor(renderer, 255, 210, 0, 255);  // flashing yellow: attack coming
-            else
-                SDL_SetRenderDrawColor(renderer, 140, 60, 180, 255);
-            break;
-        case State::Charge:
-            SDL_SetRenderDrawColor(renderer, 255, 60, 60, 255);      // red: charging
-            break;
-        case State::Recover:
-            SDL_SetRenderDrawColor(renderer, 100, 120, 180, 255);    // blue-grey: stunned
-            break;
+        case State::Chase:     break;
+        case State::Telegraph: if (flashOn) { r = 255; g = 210; b = 0; } break;   // flashing yellow
+        case State::Charge:    r = 255; g = 90;  b = 90;  break;                  // red
+        case State::Recover:   r = 150; g = 170; b = 255; break;                  // blue: stunned
+        }
+        SDL_SetTextureColorMod(Assets::boss, r, g, b);
+
+        SDL_FlipMode flip = (target->getX() < rect.x) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE;
+        SDL_RenderTextureRotated(renderer, Assets::boss, nullptr, &rect, 0.0, nullptr, flip);
+
+        if (hit) {
+            SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
+            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 170);
+            SDL_RenderFillRect(renderer, &rect);
+            SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_NONE);
         }
     }
-    SDL_RenderFillRect(renderer, &rect);
+    else {
+        if (hit) {
+            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+        }
+        else {
+            switch (state) {
+            case State::Chase:
+                SDL_SetRenderDrawColor(renderer, 140, 60, 180, 255);
+                break;
+            case State::Telegraph:
+                if (flashOn) SDL_SetRenderDrawColor(renderer, 255, 210, 0, 255);
+                else         SDL_SetRenderDrawColor(renderer, 140, 60, 180, 255);
+                break;
+            case State::Charge:
+                SDL_SetRenderDrawColor(renderer, 255, 60, 60, 255);
+                break;
+            case State::Recover:
+                SDL_SetRenderDrawColor(renderer, 100, 120, 180, 255);
+                break;
+            }
+        }
+        SDL_RenderFillRect(renderer, &rect);
+    }
 }

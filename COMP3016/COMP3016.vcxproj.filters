@@ -45,6 +45,9 @@
     <ClCompile Include="Pickup.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Asesets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -81,6 +84,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Inventory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Assets.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "Assets.h"
 #include <algorithm>
 #include <cmath>
 #include <cstring>
@@ -30,6 +31,8 @@ bool Game::init(const char* title, int width, int height) {
         SDL_Log("Renderer failed: %s", SDL_GetError());
         return false;
     }
+
+    Assets::load(renderer);   // load sprites once, after the renderer exists
 
     startRun();
     return true;
@@ -375,6 +378,7 @@ void Game::shutdown() {
     enemies.clear();
     pickups.clear();
     player.reset();
+    Assets::unload();     // textures must be freed before the renderer
     if (renderer) { SDL_DestroyRenderer(renderer); renderer = nullptr; }
     if (window) { SDL_DestroyWindow(window);     window = nullptr; }
     SDL_Quit();

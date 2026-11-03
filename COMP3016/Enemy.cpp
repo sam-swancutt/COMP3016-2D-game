@@ -1,4 +1,5 @@
 #include "Enemy.h"
+#include "Assets.h"
 #include <cmath>
 #include <algorithm>
 
@@ -39,14 +40,29 @@ void Enemy::takeDamage(int amount, float dirX, float dirY) {
 }
 
 void Enemy::render(SDL_Renderer* renderer) {
-    if (!hurtCooldown.ready()) {
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    bool hit = !hurtCooldown.ready();
+
+    if (Assets::enemy) {
+        // Face the player
+        SDL_FlipMode flip = (target->getX() < rect.x) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE;
+        SDL_SetTextureColorMod(Assets::enemy, 255, 255, 255);
+        SDL_RenderTextureRotated(renderer, Assets::enemy, nullptr, &rect, 0.0, nullptr, flip);
+
+        // White flash over the sprite when hit
+        if (hit) {
+            SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
+            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 170);
+            SDL_RenderFillRect(renderer, &rect);
+            SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_NONE);
+        }
     }
     else {
-        SDL_SetRenderDrawColor(renderer, 200, 50, 50, 255);
+        if (hit) SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+        else     SDL_SetRenderDrawColor(renderer, 200, 50, 50, 255);
+        SDL_RenderFillRect(renderer, &rect);
     }
-    SDL_RenderFillRect(renderer, &rect);
 
+    // Health bar above the enemy: green when full, red when low
     float f = health.fraction();
     SDL_FRect bg{ rect.x, rect.y - 8.0f, rect.w, 4.0f };
     SDL_FRect bar{ rect.x, rect.y - 8.0f, rect.w * f, 4.0f };

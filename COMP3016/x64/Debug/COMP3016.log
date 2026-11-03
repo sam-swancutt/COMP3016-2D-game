@@ -1,9 +1,7 @@
-﻿  COMP3016.cpp
+﻿  Asesets.cpp
+  Boss.cpp
   Enemy.cpp
   Game.cpp
-  Item.cpp
-  LevelManager.cpp
-  Pickup.cpp
   Player.cpp
   Generating Code...
   COMP3016.vcxproj -> C:\Users\samsw\OneDrive\Desktop\COMP3016\x64\Debug\COMP3016.exe

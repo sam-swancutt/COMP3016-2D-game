@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Assets.h"
 #include <cmath>
 
 Player::Player(float x, float y)
@@ -79,16 +80,29 @@ void Player::update(float dt) {
 }
 
 void Player::render(SDL_Renderer* renderer) {
-    if (dodging) {
-        SDL_SetRenderDrawColor(renderer, 120, 200, 255, 255);   // light blue: invincible roll
-    }
-    else if (!hurtCooldown.ready()) {
-        SDL_SetRenderDrawColor(renderer, 255, 120, 120, 255);   // pink: just got hit
+    if (Assets::player) {
+        // Tint the sprite: light blue while rolling, pink when just hit
+        Uint8 r = 255, g = 255, b = 255;
+        if (dodging) { r = 120; g = 200; b = 255; }
+        else if (!hurtCooldown.ready()) { r = 255; g = 120; b = 120; }
+        SDL_SetTextureColorMod(Assets::player, r, g, b);
+
+        SDL_FlipMode flip = (lastDirX < 0.0f) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE;
+        SDL_RenderTextureRotated(renderer, Assets::player, nullptr, &rect, 0.0, nullptr, flip);
     }
     else {
-        SDL_SetRenderDrawColor(renderer, 80, 200, 120, 255);    // green: normal
+        // No sprite loaded: coloured square
+        if (dodging) {
+            SDL_SetRenderDrawColor(renderer, 120, 200, 255, 255);
+        }
+        else if (!hurtCooldown.ready()) {
+            SDL_SetRenderDrawColor(renderer, 255, 120, 120, 255);
+        }
+        else {
+            SDL_SetRenderDrawColor(renderer, 80, 200, 120, 255);
+        }
+        SDL_RenderFillRect(renderer, &rect);
     }
-    SDL_RenderFillRect(renderer, &rect);
 
     if (attacking) {
         SDL_SetRenderDrawColor(renderer, 255, 160, 40, 255);
