@@ -1,14 +1,26 @@
-COMP3016 CW1 Proposal
-Genre 
-Top down 2D action roguelite boss hunting structure.
-Synopsis 
-A hunter enters the cave/dungeon to slay the beast that resides inside. Each room has the beast's minions the hunter must slay before entering the next room/level. Minions will also drop loot the hunter can use to make them stronger until the final boss room where the hunter will have to defeat the boss or risk restarting the game.
-Core gameplay 
-Hunter fights waves of minions, collects and equip/use loot, then moves to the next level, slightly harder with more minions. Final round boss fight, win = the boss dies, lose player health reaches 0 and the run restarts.
-Mechanics 
-moving / wasd, Attacking with cooldown, dodge / roll with cooldown and brief invincibility, Small inventory, Pick up, use and equip,Rarity in items, Health for player and enemies, Level manger that controls the spawns of the minions. 
-Dynamics and Aesthetics
-Risk against reward when looting mid fight and saving heals for boss fight, also learning the boss fighting pattern. Loot colours vary depending on the rarity (green, common, gold legendary). The health bar changes colour based on the remaining health(turns red when getting low and green for full health on player).    
- 
- 
+How to run 
+Unzip the submission.
+Open the HunterGame folder. It must contain COMP3016.exe, SDL3.dll and the assets folder.
+Double-click the exe from inside that folder. Do not move the exe away from assets and SDL3.dll.
 
+The full report is in report.md. It contains:
+
+Gameplay description and sample screens
+Week 2 proposal, what was delivered, and deviations with justification
+Dependencies
+Game mechanics and how they are coded
+Game programming patterns used
+UML design diagram
+Exception handling and test cases
+Use of AI and the AI Development Log
+Playtesting evidence and reflection
+Development workflow evidence and evaluation
+
+Controls
+Input	Action
+W A S D	Move
+Left mouse button	Attack towards the mouse
+Space	Dodge roll
+1 to 4	Use or equip an item
+Q or DROP button	Drop mode, then pick a slot
+Esc	Back to the menu
