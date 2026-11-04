@@ -1,4 +1,5 @@
 #include "Item.h"
+#include "Assets.h"
 #include <random>
 
 namespace {
@@ -32,17 +33,29 @@ SDL_Color Item::getRarityColour() const {
 }
 
 void Item::render(SDL_Renderer* renderer, const SDL_FRect& area) const {
-    // Border in the rarity colour, thicker for rarer items
+    // Border in the rarity colour, thicker for rarer items.
+    // The thickness scales with the size, so small floor drops still look right.
     SDL_Color c = getRarityColour();
-    float t = (rarity == Rarity::Common) ? 2.0f : (rarity == Rarity::Rare) ? 3.0f : 5.0f;
+    float base = (rarity == Rarity::Common) ? 2.0f : (rarity == Rarity::Rare) ? 3.0f : 5.0f;
+    float t = base * (area.w / 48.0f);
     SDL_SetRenderDrawColor(renderer, c.r, c.g, c.b, 255);
     SDL_RenderFillRect(renderer, &area);
 
-    // Inside colour shows the type: red = potion, steel grey = weapon
     SDL_FRect inner{ area.x + t, area.y + t, area.w - 2.0f * t, area.h - 2.0f * t };
-    if (type == ItemType::Potion) SDL_SetRenderDrawColor(renderer, 220, 70, 90, 255);
-    else                          SDL_SetRenderDrawColor(renderer, 150, 155, 175, 255);
-    SDL_RenderFillRect(renderer, &inner);
+    SDL_Texture* icon = (type == ItemType::Potion) ? Assets::potion : Assets::sword;
+
+    if (icon) {
+        // Dark panel with the sprite on top
+        SDL_SetRenderDrawColor(renderer, 30, 30, 42, 255);
+        SDL_RenderFillRect(renderer, &inner);
+        SDL_RenderTexture(renderer, icon, nullptr, &inner);
+    }
+    else {
+        // No sprite loaded: plain colours (red = potion, steel grey = weapon)
+        if (type == ItemType::Potion) SDL_SetRenderDrawColor(renderer, 220, 70, 90, 255);
+        else                          SDL_SetRenderDrawColor(renderer, 150, 155, 175, 255);
+        SDL_RenderFillRect(renderer, &inner);
+    }
 }
 
 bool Item::rollDrop(Item& out) {

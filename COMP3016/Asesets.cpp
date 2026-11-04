@@ -3,6 +3,8 @@
 SDL_Texture* Assets::player = nullptr;
 SDL_Texture* Assets::enemy = nullptr;
 SDL_Texture* Assets::boss = nullptr;
+SDL_Texture* Assets::potion = nullptr;
+SDL_Texture* Assets::sword = nullptr;
 
 SDL_Texture* Assets::loadBMP(SDL_Renderer* renderer, const char* path) {
     SDL_Surface* surface = SDL_LoadBMP(path);
@@ -27,10 +29,14 @@ void Assets::load(SDL_Renderer* renderer) {
     player = loadBMP(renderer, "assets/player.bmp");
     enemy = loadBMP(renderer, "assets/enemy.bmp");
     boss = loadBMP(renderer, "assets/boss.bmp");
+    potion = loadBMP(renderer, "assets/potion.bmp");
+    sword = loadBMP(renderer, "assets/sword.bmp");
 }
 
 void Assets::unload() {
     if (player) { SDL_DestroyTexture(player); player = nullptr; }
     if (enemy) { SDL_DestroyTexture(enemy);  enemy = nullptr; }
     if (boss) { SDL_DestroyTexture(boss);   boss = nullptr; }
+    if (potion) { SDL_DestroyTexture(potion); potion = nullptr; }
+    if (sword) { SDL_DestroyTexture(sword);  sword = nullptr; }
 }
