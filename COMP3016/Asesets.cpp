@@ -5,16 +5,19 @@ SDL_Texture* Assets::enemy = nullptr;
 SDL_Texture* Assets::boss = nullptr;
 SDL_Texture* Assets::potion = nullptr;
 SDL_Texture* Assets::sword = nullptr;
+SDL_Texture* Assets::background = nullptr;
 
-SDL_Texture* Assets::loadBMP(SDL_Renderer* renderer, const char* path) {
+SDL_Texture* Assets::loadBMP(SDL_Renderer* renderer, const char* path, bool transparent) {
     SDL_Surface* surface = SDL_LoadBMP(path);
     if (!surface) {
         SDL_Log("Could not load %s: %s", path, SDL_GetError());
-        return nullptr;                 // the game falls back to a coloured square
+        return nullptr;                 // the game falls back to a plain colour
     }
 
-    // Magenta pixels become see-through
-    SDL_SetSurfaceColorKey(surface, true, SDL_MapSurfaceRGB(surface, 255, 0, 255));
+    // Magenta pixels become see-through (not used for the background)
+    if (transparent) {
+        SDL_SetSurfaceColorKey(surface, true, SDL_MapSurfaceRGB(surface, 255, 0, 255));
+    }
 
     SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
     SDL_DestroySurface(surface);
@@ -31,12 +34,14 @@ void Assets::load(SDL_Renderer* renderer) {
     boss = loadBMP(renderer, "assets/boss.bmp");
     potion = loadBMP(renderer, "assets/potion.bmp");
     sword = loadBMP(renderer, "assets/sword.bmp");
+    background = loadBMP(renderer, "assets/background.bmp", false);
 }
 
 void Assets::unload() {
-    if (player) { SDL_DestroyTexture(player); player = nullptr; }
-    if (enemy) { SDL_DestroyTexture(enemy);  enemy = nullptr; }
-    if (boss) { SDL_DestroyTexture(boss);   boss = nullptr; }
-    if (potion) { SDL_DestroyTexture(potion); potion = nullptr; }
-    if (sword) { SDL_DestroyTexture(sword);  sword = nullptr; }
+    if (player) { SDL_DestroyTexture(player);     player = nullptr; }
+    if (enemy) { SDL_DestroyTexture(enemy);      enemy = nullptr; }
+    if (boss) { SDL_DestroyTexture(boss);       boss = nullptr; }
+    if (potion) { SDL_DestroyTexture(potion);     potion = nullptr; }
+    if (sword) { SDL_DestroyTexture(sword);      sword = nullptr; }
+    if (background) { SDL_DestroyTexture(background); background = nullptr; }
 }

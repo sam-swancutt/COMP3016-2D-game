@@ -8,6 +8,10 @@
 namespace {
     const char* difficultyNames[3] = { "EASY (+0 bots)", "NORMAL (+2 bots)", "HARD (+4 bots)" };
     const int difficultyExtra[3] = { 0, 2, 4 };
+
+    bool inside(const SDL_FRect& r, float x, float y) {
+        return x >= r.x && x <= r.x + r.w && y >= r.y && y <= r.y + r.h;
+    }
 }
 
 Game::~Game() {
@@ -45,6 +49,7 @@ void Game::startRun() {
     player = std::make_unique<Player>(640.0f, 360.0f);   // new player = empty inventory
     bossSpawned = false;
     won = false;
+    dropMode = false;
     levelManager.reset();
 }
 
@@ -56,6 +61,28 @@ void Game::startGame() {
 
 SDL_FRect Game::buttonRect(int index) const {
     return SDL_FRect{ 440.0f, 280.0f + index * 90.0f, 400.0f, 64.0f };
+}
+
+SDL_FRect Game::slotRect(int index) const {
+    return SDL_FRect{ 20.0f + index * 60.0f, 650.0f, 48.0f, 48.0f };
+}
+
+SDL_FRect Game::dropButtonRect() const {
+    return SDL_FRect{ 350.0f, 650.0f, 110.0f, 48.0f };
+}
+
+void Game::dropFromSlot(int slot) {
+    Item item;
+    if (!player->dropItem(slot, item)) return;   // empty slot: nothing to drop
+
+    // Land it a short way from the player, away from the screen edge
+    float cx = player->getX() + player->getRect().w / 2.0f;
+    float cy = player->getY() + player->getRect().h / 2.0f;
+    float dropY = (cy + 50.0f < 640.0f) ? cy + 50.0f : cy - 50.0f;
+
+    // 1.5 second delay so it isn't picked straight back up
+    pickups.push_back(std::make_unique<Pickup>(cx, dropY, item, 1.5f));
+    dropMode = false;
 }
 
 void Game::drawText(const char* text, float centerX, float y, float scale) {
@@ -109,7 +136,7 @@ void Game::handleEvents() {
                 float my = (event.type == SDL_EVENT_MOUSE_MOTION) ? event.motion.y : event.button.y;
                 for (int i = 0; i < 3; i++) {
                     SDL_FRect r = buttonRect(i);
-                    if (mx >= r.x && mx <= r.x + r.w && my >= r.y && my <= r.y + r.h) {
+                    if (inside(r, mx, my)) {
                         selectedDifficulty = i;
                         if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN && event.button.button == SDL_BUTTON_LEFT) {
                             startGame();
@@ -126,11 +153,38 @@ void Game::handleEvents() {
                 state = GameState::Menu;
             }
 
-            // Keys 1-4 use or equip the item in that inventory slot
             if (event.type == SDL_EVENT_KEY_DOWN && !event.key.repeat && !won) {
                 SDL_Keycode k = event.key.key;
+
+                // Q toggles drop mode
+                if (k == SDLK_Q) {
+                    dropMode = !dropMode;
+                }
+
+                // Keys 1-4: drop the item if drop mode is on, otherwise use or equip it
                 if (k >= SDLK_1 && k <= SDLK_4) {
-                    player->useItem((int)(k - SDLK_1));
+                    int slot = (int)(k - SDLK_1);
+                    if (dropMode) dropFromSlot(slot);
+                    else          player->useItem(slot);
+                }
+            }
+
+            // Mouse: the DROP button, clicking a slot in drop mode, right-click to drop
+            if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN && !won) {
+                float mx = event.button.x;
+                float my = event.button.y;
+
+                if (event.button.button == SDL_BUTTON_LEFT && inside(dropButtonRect(), mx, my)) {
+                    dropMode = !dropMode;
+                }
+                else {
+                    for (int i = 0; i < Inventory::Size; i++) {
+                        if (!inside(slotRect(i), mx, my)) continue;
+                        if (event.button.button == SDL_BUTTON_RIGHT ||
+                            (event.button.button == SDL_BUTTON_LEFT && dropMode)) {
+                            dropFromSlot(i);
+                        }
+                    }
                 }
             }
         }
@@ -149,6 +203,10 @@ void Game::update(float dt) {
 
     for (auto& e : enemies) {
         e->update(dt);
+    }
+
+    for (auto& p : pickups) {
+        p->update(dt);    // counts down the pickup delay on dropped items
     }
 
     // Player attack hits enemies (damage depends on the equipped weapon)
@@ -195,9 +253,11 @@ void Game::update(float dt) {
             [](const std::unique_ptr<Enemy>& e) { return e->isDead(); }),
         enemies.end());
 
-    // Walk over a pickup to collect it (it stays on the floor if the inventory is full)
+    // Walk over a pickup to collect it (it stays on the floor if the inventory is full
+    // or if it was only just dropped)
     for (auto it = pickups.begin(); it != pickups.end(); ) {
-        if (SDL_HasRectIntersectionFloat(&player->getRect(), &(*it)->getRect()) &&
+        if ((*it)->canPickUp() &&
+            SDL_HasRectIntersectionFloat(&player->getRect(), &(*it)->getRect()) &&
             player->pickUp((*it)->getItem())) {
             it = pickups.erase(it);
         }
@@ -277,7 +337,7 @@ void Game::renderMenu() {
 void Game::renderInventory() {
     // Four item slots, bottom-left, labelled 1-4
     for (int i = 0; i < Inventory::Size; i++) {
-        SDL_FRect slot{ 20.0f + i * 60.0f, 650.0f, 48.0f, 48.0f };
+        SDL_FRect slot = slotRect(i);
         const Item& s = player->getInventory().get(i);
         if (!s.isEmpty()) {
             s.render(renderer, slot);
@@ -286,6 +346,16 @@ void Game::renderInventory() {
             SDL_SetRenderDrawColor(renderer, 40, 40, 50, 255);
             SDL_RenderFillRect(renderer, &slot);
         }
+
+        // In drop mode, outline the slots that hold something you can drop
+        if (dropMode && !s.isEmpty()) {
+            SDL_SetRenderDrawColor(renderer, 255, 70, 70, 255);
+            SDL_FRect o1{ slot.x - 2.0f, slot.y - 2.0f, slot.w + 4.0f, slot.h + 4.0f };
+            SDL_FRect o2{ slot.x - 3.0f, slot.y - 3.0f, slot.w + 6.0f, slot.h + 6.0f };
+            SDL_RenderRect(renderer, &o1);
+            SDL_RenderRect(renderer, &o2);
+        }
+
         SDL_SetRenderDrawColor(renderer, 200, 200, 210, 255);
         drawText(std::to_string(i + 1).c_str(), slot.x + slot.w / 2.0f, slot.y - 12.0f, 1.0f);
     }
@@ -304,6 +374,20 @@ void Game::renderInventory() {
     drawText("WEAPON", wslot.x + wslot.w / 2.0f, wslot.y - 12.0f, 1.0f);
     drawText(("DMG " + std::to_string(player->getDamage())).c_str(),
         wslot.x + wslot.w / 2.0f, wslot.y + 54.0f, 1.0f);
+
+    // DROP button: orange while drop mode is on
+    SDL_FRect db = dropButtonRect();
+    if (dropMode) SDL_SetRenderDrawColor(renderer, 255, 160, 40, 255);
+    else          SDL_SetRenderDrawColor(renderer, 60, 60, 75, 255);
+    SDL_RenderFillRect(renderer, &db);
+    if (dropMode) SDL_SetRenderDrawColor(renderer, 20, 20, 30, 255);
+    else          SDL_SetRenderDrawColor(renderer, 230, 230, 240, 255);
+    drawText("DROP (Q)", db.x + db.w / 2.0f, db.y + 20.0f, 1.0f);
+
+    if (dropMode) {
+        SDL_SetRenderDrawColor(renderer, 255, 120, 120, 255);
+        drawText("Pick a slot to drop (1-4 or click)", 405.0f, db.y - 14.0f, 1.0f);
+    }
 }
 
 void Game::render() {
@@ -312,8 +396,12 @@ void Game::render() {
         return;
     }
 
+    // Background: the dungeon floor, or a flat colour if the image didn't load
     SDL_SetRenderDrawColor(renderer, 20, 20, 30, 255);
     SDL_RenderClear(renderer);
+    if (Assets::background) {
+        SDL_RenderTexture(renderer, Assets::background, nullptr, nullptr);
+    }
 
     for (auto& p : pickups) {
         p->render(renderer);

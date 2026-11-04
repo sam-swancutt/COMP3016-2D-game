@@ -26,6 +26,16 @@ public:
     const Inventory& getInventory() const { return inventory; }
     const Item& getWeapon() const { return weapon; }   // empty item = nothing equipped
 
+    // Removes the item from a slot and hands it back. Returns false if the slot is empty.
+    bool dropItem(int slot, Item& out) {
+        if (slot < 0 || slot >= Inventory::Size) return false;
+        Item it = inventory.get(slot);
+        if (it.isEmpty()) return false;
+        inventory.take(slot);
+        out = it;
+        return true;
+    }
+
 private:
     float speed = 250.0f;
 
