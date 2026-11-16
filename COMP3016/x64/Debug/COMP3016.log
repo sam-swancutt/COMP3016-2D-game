@@ -1,1 +1,13 @@
-﻿  COMP3016.vcxproj -> C:\Users\samsw\OneDrive\Desktop\COMP3016\x64\Debug\COMP3016.exe
+﻿  Asesets.cpp
+  Boss.cpp
+  COMP3016.cpp
+  Enemy.cpp
+  Entity.cpp
+  Game.cpp
+  Item.cpp
+  LevelManager.cpp
+  Pickup.cpp
+  Player.cpp
+  Projectile.cpp
+  Generating Code...
+  COMP3016.vcxproj -> C:\Users\samsw\OneDrive\Desktop\source code\COMP3016\x64\Debug\COMP3016.exe
